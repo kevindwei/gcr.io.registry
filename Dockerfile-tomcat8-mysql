@@ -1,0 +1,6 @@
+FROM         registry.cn-shenzhen.aliyuncs.com/spider2/tomcat8:latest
+MAINTAINER    dwy
+
+#安装mysql
+RUN yum install -y mysql
+

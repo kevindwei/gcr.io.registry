@@ -14,5 +14,5 @@ RUN chmod +x /start.sh
 #COPY /software/nginx/ABTestingGateway/utils/conf/beta1.conf /software/nginx/conf.d
 #COPY /software/nginx/ABTestingGateway/utils/conf/beta2.conf /software/nginx/conf.d
 
-
-ENTRYPOINT /start.sh
+CMD ["source","/start.sh"]
+#ENTRYPOINT /start.sh

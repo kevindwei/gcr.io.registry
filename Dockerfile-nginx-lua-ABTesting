@@ -13,4 +13,4 @@ ADD ABTestingGateway.tar.gz /software/nginx/
 #COPY /software/nginx/ABTestingGateway/utils/conf/beta2.conf /software/nginx/conf.d
 
 
-ENTRYPOINT ./start.sh
+#ENTRYPOINT ./start.sh

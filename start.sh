@@ -1,8 +1,8 @@
 #!/bin/bash
 
-/software/nginx/nginx -p `pwd` -c conf.d/stable.conf
-/software/nginx/nginx -p `pwd` -c conf.d/beta1.conf
-/software/nginx/nginx -p `pwd` -c conf.d/beta2.conf
-/software/nginx/nginx -p `pwd` -c conf.d/beta3.conf
-/software/nginx/nginx -p `pwd` -c conf.d/beta4.conf
-/software/nginx/nginx -p `pwd` -c nginx.conf
+/software/nginx/nginx -p `pwd` -c /software/nginx/ABTestingGateway/utils/conf/stable.conf
+/software/nginx/nginx -p `pwd` -c /software/nginx/ABTestingGateway/utils/conf/beta1.conf
+/software/nginx/nginx -p `pwd` -c /software/nginx/ABTestingGateway/utils/conf/beta2.conf
+/software/nginx/nginx -p `pwd` -c /software/nginx/ABTestingGateway/utils/conf/beta3.conf
+/software/nginx/nginx -p `pwd` -c /software/nginx/ABTestingGateway/utils/conf/beta4.conf
+/software/nginx/nginx -p `pwd` -c /software/nginx/ABTestingGateway/utils/conf/nginx.conf

@@ -1,0 +1,16 @@
+FROM registry.cn-shenzhen.aliyuncs.com/ljdp/nginx
+
+MAINTAINER dwy
+
+ADD ABTestingGateway.tar.gz /software/nginx/
+
+COPY /software/nginx/ABTestingGateway/utils/conf/nginx.conf /software/nginx/
+COPY /software/nginx/ABTestingGateway/utils/conf/default.conf /software/nginx/conf.d
+COPY /software/nginx/ABTestingGateway/utils/conf/stable.conf /software/nginx/conf.d
+COPY /software/nginx/ABTestingGateway/utils/conf/upstream.conf /software/nginx/conf.d
+COPY /software/nginx/ABTestingGateway/utils/conf/vhost.conf /software/nginx/conf.d
+COPY /software/nginx/ABTestingGateway/utils/conf/beta1.conf /software/nginx/conf.d
+COPY /software/nginx/ABTestingGateway/utils/conf/beta2.conf /software/nginx/conf.d
+
+
+ENTRYPOINT ./start.sh

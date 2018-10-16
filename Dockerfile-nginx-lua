@@ -23,7 +23,7 @@ RUN groupadd -r nginx \
 RUN mkdir -p /software/temp    
     
 # 设置 NGINX 的环境变量，若读者有其他的环境变量需要设置，也可以在这里添加。
-ENV NGX_OPENRESTY_HOME /software/nginx 
+ENV NGX_OPENRESTY_HOME /software/ngx_openresty 
 ENV NGX_OPENRESTY_VERSION 1.9.7.1
 ENV ZLIB_VER 1.2.11
 ENV SSL_VER 1.0.2h

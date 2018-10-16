@@ -1,5 +1,5 @@
 # 设置继承自ubuntu官方镜像
-FROM ubuntu
+FROM ubuntu:latest 
 
 MAINTAINER dwy
 
@@ -49,7 +49,6 @@ RUN wget https://openresty.org/download/ngx_openresty-${ngx_openresty_VERSION}.t
 	
 #安装LuaJIT  
 RUN cd /software/temp/ngx_openresty-${ngx_openresty_VERSION}/bundle/LuaJIT-2.1-20151219/ \
-    && make clean \
     && make \
     && make install \
     && ln -sf luajit-2.1.0-alpha /usr/local/bin/luajit 

@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		wget \
     curl \
     vim \
+    make \
 		&& rm -rf /var/lib/apt/lists/*
 
 
@@ -45,15 +46,14 @@ RUN mkdir -p /software/temp
 RUN wget https://openresty.org/download/ngx_openresty-${ngx_openresty_VERSION}.tar.gz \
     && tar -zxvf ngx_openresty-${ngx_openresty_VERSION}.tar.gz -C /software/temp
 
-RUN wget http://ftp.gnu.org/gnu/make/make-4.2.tar.gz  \
-    && tar -zxvf  make-4.2.tar.gz -C /software/temp
+#RUN wget http://ftp.gnu.org/gnu/make/make-4.2.tar.gz  \
+#    && tar -zxvf  make-4.2.tar.gz -C /software/temp
 
 #安装make
-RUN cd /software/temp/make-4.2 \
-    && ./configure \
-    && ./make check \
-    && ./make install \
-    && ./make clean
+#RUN cd /software/temp/make-4.2 \
+#    && ./configure \
+#    && ./make install \
+#    && ./make clean
 	
 #安装LuaJIT  
 RUN cd /software/temp/ngx_openresty-${ngx_openresty_VERSION}/bundle/LuaJIT-2.1-20151219/ \

@@ -55,7 +55,7 @@ RUN cd  /software/temp/ngx_openresty-${NGX_OPENRESTY_VERSION}   \
                    --with-pcre    \
                    --with-luajit  \
                    --add-module=/software/temp/ngx_cache_purge-2.3/   \
-                   --add-module=/software/tempnginx_upstream_check_module-0.3.0/  \
+                   --add-module=/software/temp/nginx_upstream_check_module-0.3.0/  \
                    -j2  \
     && make  \
 	&& make install

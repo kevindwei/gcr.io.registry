@@ -23,7 +23,7 @@ ENV NGX_OPENRESTY_HOME /software/nginx
 
 
 # 安装依赖
-RUN sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make \
+RUN add-apt-repository ppa:ubuntu-desktop/ubuntu-make \
     && apt-get update \
     && apt-get -y install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl  ubuntu-make  \
 	&& rm -rf /var/lib/apt/lists/*    

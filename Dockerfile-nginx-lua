@@ -24,7 +24,7 @@ ENV NGX_OPENRESTY_HOME /software/nginx
 
 # 安装依赖
 RUN  apt-get update \
-    && apt-get -y install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl  ubuntu-make  \
+    && apt-get -y install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl    \
 	&& rm -rf /var/lib/apt/lists/*    
    
         

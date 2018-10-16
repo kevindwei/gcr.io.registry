@@ -25,6 +25,7 @@ RUN mkdir -p /software/temp
 # 设置 NGINX 的环境变量，若读者有其他的环境变量需要设置，也可以在这里添加。
 ENV NGX_OPENRESTY_HOME /software/nginx 
 ENV NGX_OPENRESTY_VERSION 1.9.7.1
+ENV ZLIB_VER 1.2.11
 
 # 安装依赖
 RUN  apt-get update \
@@ -37,10 +38,14 @@ ADD ngx_cache_purge-2.3.tar.gz /software/temp
 #该模块用于ustream健康检查
 ADD nginx_upstream_check_module-0.3.0.tar.gz /software/temp
 
-
+#下载NGX_OPENRESTY
 RUN wget https://openresty.org/download/ngx_openresty-${NGX_OPENRESTY_VERSION}.tar.gz \
     && tar -zxvf ngx_openresty-${NGX_OPENRESTY_VERSION}.tar.gz -C /software/temp
-
+    
+#下载zlib
+RUN wget http://zlib.net/zlib-${ZLIB_VER}.tar.gz \
+    && tar -zxvf zlib-${ZLIB_VER}.tar.gz -C /software/temp
+    
 
 #安装LuaJIT  
 RUN cd /software/temp/ngx_openresty-${NGX_OPENRESTY_VERSION}/bundle/LuaJIT-2.1-20151219/ \
@@ -56,6 +61,7 @@ RUN cd  /software/temp/ngx_openresty-${NGX_OPENRESTY_VERSION}   \
                    --with-luajit  \
                    --add-module=/software/temp/ngx_cache_purge-2.3/   \
                    --add-module=/software/temp/nginx_upstream_check_module-0.3.0/  \
+                   --with-zlib=/software/temp/zlib-${ZLIB_VER} \
                    -j2  \
     && make  \
 	&& make install

@@ -7,7 +7,7 @@ RUN yum clean all
 
 RUN apt-get update \
     && apt-get install -y git  \
-    && cd /   \tmp
+    && cd   \tmp \
     && git clone https://github.com/kevindwei/ABTestingGateway.git
 
 #copy conf 

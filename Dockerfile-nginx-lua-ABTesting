@@ -2,9 +2,12 @@ FROM registry.cn-shenzhen.aliyuncs.com/spider2/nginx-lua:latest
 
 MAINTAINER dwy
 
-COPY ABTestingGateway.tar.gz /
-RUN tar -zxvf /ABTestingGateway.tar.gz 
-ADD start.sh /
-RUN chmod +x /start.sh
+
+RUN apt-get update \
+    && apt-get install -y git  \
+    && cd /   \
+    && git clone https://github.com/kevindwei/ABTestingGateway.git
+ 
+RUN chmod +x /ABTestingGateway/util/start.sh
 
 #ENTRYPOINT ["/start.sh"]

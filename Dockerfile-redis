@@ -18,4 +18,4 @@ RUN  rm -rf /etc/redis.conf \
 
 
 #启动
-ENTRYPOINT [ "/usr/bin/redis-server","/tmp/ABTestingGateway/utils/conf/redis.conf"]
+#ENTRYPOINT [ "/usr/bin/redis-server","/tmp/ABTestingGateway/utils/conf/redis.conf"]

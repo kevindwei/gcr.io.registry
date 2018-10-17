@@ -12,4 +12,16 @@ RUN chmod +x /ABTestingGateway/utils/abtesting.sh
 
 
 
-#ENTRYPOINT ["/start.sh"]
+
+##test redis安装在同一台容器
+RUN yum -y update && yum -y install epel-release && yum -y install redis
+EXPOSE 6379
+#copy conf 
+RUN  rm -rf /etc/redis.conf \
+   && cp /ABTestingGateway/utils/conf/redis.conf  /etc/
+#修改绑定IP地址
+#RUN sed -i -e 's@# bind 127.0.0.1@bind 0.0.0.0@g' /etc/redis.conf
+#关闭保护模式
+#RUN sed -i -e 's@protected-mode yes@protected-mode no@g' /etc/redis.conf
+#启动
+ENTRYPOINT [ "/usr/bin/redis-server","/ABTestingGateway/utils/conf/redis.conf"]

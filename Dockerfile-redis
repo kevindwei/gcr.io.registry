@@ -6,12 +6,12 @@ EXPOSE 6379
 RUN yum clean all
 
 RUN yum install -y git  \
-    && cd   /tmp \
+    && cd   / \
     && git clone https://github.com/kevindwei/ABTestingGateway.git
 
 #copy conf 
 RUN  rm -rf /etc/redis.conf \
-   && cp /tmp/ABTestingGateway/utils/conf/redis.conf  /etc/
+   && cp /ABTestingGateway/utils/conf/redis.conf  /etc/
 
 #修改绑定IP地址
 #RUN sed -i -e 's@# bind 127.0.0.1@bind 0.0.0.0@g' /etc/redis.conf
@@ -20,4 +20,4 @@ RUN  rm -rf /etc/redis.conf \
 
 
 #启动
-#ENTRYPOINT [ "/usr/bin/redis-server","/tmp/ABTestingGateway/utils/conf/redis.conf"]
+ENTRYPOINT [ "/usr/bin/redis-server","/ABTestingGateway/utils/conf/redis.conf"]

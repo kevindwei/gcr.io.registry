@@ -7,7 +7,9 @@ RUN apt-get update \
     && apt-get install -y git  \
     && cd /   \
     && git clone https://github.com/kevindwei/ABTestingGateway.git
- 
-RUN chmod +x /ABTestingGateway/util/abtesting.sh
+    
+RUN chmod +x /ABTestingGateway/utils/abtesting.sh
+
+
 
 #ENTRYPOINT ["/start.sh"]

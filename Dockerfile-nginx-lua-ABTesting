@@ -8,6 +8,6 @@ RUN apt-get update \
     && cd /   \
     && git clone https://github.com/kevindwei/ABTestingGateway.git
  
-RUN chmod +x /ABTestingGateway/util/start.sh
+RUN chmod +x /ABTestingGateway/util/abtesting.sh
 
 #ENTRYPOINT ["/start.sh"]

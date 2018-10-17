@@ -14,7 +14,8 @@ RUN chmod +x /ABTestingGateway/utils/abtesting.sh
 
 
 ##test redis安装在同一台容器
-RUN yum -y update && yum -y install epel-release && yum -y install redis
+RUN apt-get update \
+    && apt-get install -y redis
 EXPOSE 6379
 #copy conf 
 RUN  rm -rf /etc/redis.conf \

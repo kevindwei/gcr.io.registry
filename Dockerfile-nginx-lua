@@ -41,7 +41,7 @@ ADD nginx_upstream_check_module-0.3.0.tar.gz /software/temp
 
 #下载NGX_OPENRESTY  
 RUN wget https://openresty.org/download/openresty-${NGX_OPENRESTY_VERSION}.tar.gz \
-    && tar -zxvf ngx_openresty-${NGX_OPENRESTY_VERSION}.tar.gz -C /software/temp
+    && tar -zxvf openresty-${NGX_OPENRESTY_VERSION}.tar.gz -C /software/temp
     
 #下载zlib
 RUN wget http://zlib.net/zlib-${ZLIB_VER}.tar.gz \
@@ -57,7 +57,7 @@ RUN cd /software/temp/ngx_openresty-${NGX_OPENRESTY_VERSION}/bundle/LuaJIT-2.1-2
     && ln -sf luajit-2.1.0-alpha /usr/local/bin/luajit 
     
 #安装ngx_openresty
-RUN cd  /software/temp/ngx_openresty-${NGX_OPENRESTY_VERSION}   \
+RUN cd  /software/temp/openresty-${NGX_OPENRESTY_VERSION}   \
     && ./configure --prefix=${NGX_OPENRESTY_HOME}  \
                    --with-http_realip_module  \
                    --with-pcre    \

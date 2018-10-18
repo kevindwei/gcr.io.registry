@@ -51,10 +51,10 @@ RUN wget http://www.openssl.org/source/openssl-${SSL_VER}.tar.gz \
     && tar -zxvf openssl-${SSL_VER}.tar.gz -C /software/temp    
 
 #安装LuaJIT  
-RUN cd /software/temp/openresty-${NGX_OPENRESTY_VERSION}/bundle/LuaJIT-2.1-20151219/ \
+RUN cd /software/temp/openresty-${NGX_OPENRESTY_VERSION}/bundle/LuaJIT-2.1-20160108/ \
     && make \
     && make install \
-    && ln -sf luajit-2.1.0-alpha /usr/local/bin/luajit 
+    && ln -sf luajit-2.1.0-beta1 /usr/local/bin/luajit 
     
 #安装ngx_openresty
 RUN cd  /software/temp/openresty-${NGX_OPENRESTY_VERSION}   \

@@ -24,7 +24,7 @@ RUN mkdir -p /software/temp
     
 # 设置 NGINX 的环境变量，若读者有其他的环境变量需要设置，也可以在这里添加。
 ENV NGX_OPENRESTY_HOME /software/ngx_openresty 
-ENV NGX_OPENRESTY_VERSION 1.13.6.1
+ENV NGX_OPENRESTY_VERSION 1.9.7.5
 ENV ZLIB_VER 1.2.11
 ENV SSL_VER 1.0.2h
 
@@ -39,8 +39,8 @@ ADD ngx_cache_purge-2.3.tar.gz /software/temp
 #该模块用于ustream健康检查
 ADD nginx_upstream_check_module-0.3.0.tar.gz /software/temp
 
-#下载NGX_OPENRESTY
-RUN wget https://openresty.org/download/ngx_openresty-${NGX_OPENRESTY_VERSION}.tar.gz \
+#下载NGX_OPENRESTY  
+RUN wget https://openresty.org/download/openresty-${NGX_OPENRESTY_VERSION}.tar.gz \
     && tar -zxvf ngx_openresty-${NGX_OPENRESTY_VERSION}.tar.gz -C /software/temp
     
 #下载zlib

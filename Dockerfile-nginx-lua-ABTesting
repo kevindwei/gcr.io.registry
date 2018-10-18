@@ -1,4 +1,4 @@
-FROM registry.cn-shenzhen.aliyuncs.com/spider2/nginx-lua:latest
+FROM registry.cn-shenzhen.aliyuncs.com/spider2/nginx-lua:1.9.7.5
 
 MAINTAINER dwy
 

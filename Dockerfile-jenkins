@@ -5,7 +5,7 @@ COPY	get-pip.py /tmp/
 # if we want to install via apt
 USER root
 RUN   python /tmp/get-pip.py \
-	&& pip install requests\
+	&& pip install requests
 
 RUN apt-get update && apt-get install -y apt-transport-https \\
 	&& curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - \\
@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y apt-transport-https \\
 	 deb http://apt.kubernetes.io/ kubernetes-xenial main \\
 	 EOF \\
 	&& apt-get update \\
-	&& apt-get install -y  kubectl \\
+	&& apt-get install -y  kubectl 
 	
 # drop back to the regular jenkins user - good practice
 USER jenkins

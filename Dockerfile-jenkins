@@ -15,4 +15,4 @@ RUN apt-get update && apt-get install -y apt-transport-https \
     && touch /root/.kube/config
 	
 # drop back to the regular jenkins user - good practice
-USER jenkins
+#USER jenkins
